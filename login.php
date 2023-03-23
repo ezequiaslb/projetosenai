@@ -1,3 +1,7 @@
+    <?php
+    session_start();
+    require_once "conecta.php";
+    ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,16 +11,28 @@
     <link rel="stylesheet" href="style.css">
     <title>Sistema de Reservas de Espaços</title>
 </head>
-<body>
+<body> 
 <div class="container">
       <form action="valida_login.php" method="post">
         <h2>Login</h2>
         <label for="username">Usuário:</label>
-        <input type="text" name="username" id="username" required>
+        <input type="text" name="email" id="username" required>
         <label for="password">Senha:</label>
-        <input type="password" name="password" id="password" required>
+        <input type="password" name="senha" id="password" required>
         <input type="submit" value="Entrar">
       </form>
     </div>
 </body>
 </html>
+
+ <?php 
+    /*if(isset($_SESSION['mensagem_erro'])) {
+        echo "<div class='mensagem-erro'>" . $_SESSION['mensagem_erro'] . "</div>";
+        unset($_SESSION['mensagem_erro']); // limpa a variável de sessão após exibir a mensagem
+    }*/
+    
+    if(isset($_SESSION['mensagem_erro'])) {
+        echo "<script>alert('" . $_SESSION['mensagem_erro'] . "')</script>";
+        unset($_SESSION['mensagem_erro']); // limpa a variável de sessão após exibir a mensagem
+    }
+    ?> 

@@ -13,7 +13,7 @@ if (mysqli_connect_errno()) {
     die("Erro ao conectar ao banco de dados: " . mysqli_connect_error());
 }
 else{
-    echo("Conexão feita com Sucesso!");
+    echo("");
 }
 
 ?>

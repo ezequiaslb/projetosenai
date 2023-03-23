@@ -1,46 +1,55 @@
 .container {
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  form {
-    display: inline-block;
-    text-align: left;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px #ccc;
-  }
-  
-  h2 {
-    margin-top: 0;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  input[type="text"],
-  input[type="password"] {
-    width: 100%;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+form {
+  display: inline-block;
+  text-align: left;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #008080;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #005959;
+}
+
+.mensagem-erro {
+    background-color: #ffe5e5;
+    border: 1px solid #ff7b7b;
+    color: #ff7b7b;
     padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  
-  input[type="submit"] {
-    background-color: #008080;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 3px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #005959;
+    margin-bottom: 10px;
+    text-align: center;
   }
