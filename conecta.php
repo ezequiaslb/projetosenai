@@ -3,7 +3,7 @@
 $hostname = "localhost";   // Endereço do servidor de banco de dados
 $username = "ezequias"; // Nome do usuário do banco de dados
 $password = "[SYLlmSDrngBRroi";   // Senha do usuário do banco de dados
-$dbname   = "colecoes_pessoais";  // Nome do banco de dados
+$dbname   = "sistemareservas";  // Nome do banco de dados
 
 // Conectar ao banco de dados usando a função mysqli_connect()
 $conexao = mysqli_connect($hostname, $username, $password, $dbname);
