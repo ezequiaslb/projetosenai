@@ -22,7 +22,7 @@ if(!isset($_SESSION['id_usuario'])) {
             <h1>Sistema de Reservas</h1>
             <nav>
                 <ul>
-                    <li><a href="login.php">Início</a></li>
+                    <li class="active"><a href="login.php">Início</a></li>
                     <li><a href="espacos.php">Espaços</a></li>
                     <li><a href="equipamentos.php">Equipamentos</a></li>
                     <li><a href="reservas.php">Reservas</a></li>
@@ -32,7 +32,8 @@ if(!isset($_SESSION['id_usuario'])) {
             </nav>
         </div>
         <div class="content">
-            <h2>Área do Administrador</h2>
+            <h2>Bem-vindo ao Painel de Controle</h2>
+            <p>Este é o painel de controle do Sistema de Reservas. Aqui você pode gerenciar as reservas, os espaços e os usuários.</p>
             <h3>Reservas Pendentes</h3>
             <table>
                 <thead>
