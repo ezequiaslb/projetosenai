@@ -12,7 +12,7 @@
     <title>Sistema de Reservas de Espaços</title>
 </head>
 <body> 
-    <div class="login.container">
+    <div class="login-container">
     
      <form action="valida_login.php" method="post">
         <h2 class="titulo">Login</h2>

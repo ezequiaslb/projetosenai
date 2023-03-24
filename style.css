@@ -6,18 +6,29 @@
     --cor-destaque: #A5F257;
     --cor-destaque-escura: #F2B28D;
 }
+
+/* Define as regras de estilo para o contêiner principal das páginas */
 .container {
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
 }
 
+/* Define as regras de estilo para o contêiner do login */
 .login-container {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 3px;
+    margin: 0 auto;
+    width: 40%;
     background-color: #fff;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
 }
+
+.login-container h2 {
+    text-align: center;
+    
+}
+
 
 /* Define as regras de estilo para o cabeçalho */
 .header {
@@ -25,7 +36,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    background-color: var(--cor-primaria);
+    background-color: #3C2D73;
     color: #fff;
     padding: 20px;
 }
@@ -34,11 +45,6 @@
     margin: 0;
     font-size: 32px;
 }
-.titulo {
-    color: #3C2D73;
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
 
 .header ul {
     list-style: none;
@@ -90,7 +96,7 @@ th, td {
 }
 
 th {
-    background-color: var(--cor-secundaria-1);
+    background-color: #0487D9;
     color: #fff;
 }
 
@@ -114,7 +120,7 @@ input[type="text"], input[type="email"], input[type="password"], select, textare
 }
 
 input[type="submit"], button {
-    background-color: var(--cor-secundaria-2);
+    background-color: #048ABF;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -123,12 +129,12 @@ input[type="submit"], button {
 }
 
 input[type="submit"]:hover, button:hover {
-    background-color: var(--cor-destaque);
+    background-color: #A5F257;
 }
 
 /* Define as regras de estilo para o destaque */
 .destaque {
-    background-color: var(--cor-destaque);
+    background-color: #A5F257;
     color: #fff;
     padding: 20px;
     margin-bottom: 20px;
@@ -142,11 +148,18 @@ input[type="submit"]:hover, button:hover {
 
 /* Define as regras de estilo para o destaque escuro */
 .destaque-escuro {
-    background-color: var(--cor-destaque-escura);
+    background-color: #F2B28D;
     color: #fff;
     padding: 20px;
     margin-bottom: 20px;
 }
+
+.destaque-escuro h2 {
+    margin-top: 0;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
 /* Define as regras de estilo para as mensagens de erro */
 .mensagem-erro {
     background-color: #f2dede;
