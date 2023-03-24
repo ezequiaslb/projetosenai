@@ -1,57 +1,168 @@
+/* Define as cores do esquema */
+:root {
+    --cor-primaria: #3C2D73;
+    --cor-secundaria-1: #0487D9;
+    --cor-secundaria-2: #048ABF;
+    --cor-destaque: #A5F257;
+    --cor-destaque-escura: #F2B28D;
+}
 .container {
-  width: 50%;
-  margin: 0 auto;
-  text-align: center;
+    width: 50%;
+    margin: 0 auto;
 }
 
+.login-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Define as regras de estilo para o cabeçalho */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: var(--cor-primaria);
+    color: #fff;
+    padding: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+.titulo {
+    color: #3C2D73;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+.header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header li {
+    margin-left: 20px;
+}
+
+.header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+/* Define as regras de estilo para o conteúdo da página */
+.content {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.content h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.content p {
+    margin-bottom: 20px;
+}
+
+/* Define as regras de estilo para as tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    background-color: var(--cor-secundaria-1);
+    color: #fff;
+}
+
+/* Define as regras de estilo para os formulários */
 form {
-  display: inline-block;
-  text-align: left;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px #ccc;
-}
-
-h2 {
-  margin-top: 0;
+    margin-bottom: 20px;
 }
 
 label {
-  display: block;
-  margin-bottom: 10px;
+    display: block;
+    margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-input[type="submit"] {
-  background-color: #008080;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 3px;
-  border: none;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover {
-  background-color: #005959;
-}
-
-.mensagem-erro {
-    background-color: #ffe5e5;
-    border: 1px solid #ff7b7b;
-    color: #ff7b7b;
+input[type="text"], input[type="email"], input[type="password"], select, textarea {
+    width: 100%;
     padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
     margin-bottom: 10px;
-    text-align: center;
-  }
-  /* Estilos para a página de administrador */
- 
+}
+
+input[type="submit"], button {
+    background-color: var(--cor-secundaria-2);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: var(--cor-destaque);
+}
+
+/* Define as regras de estilo para o destaque */
+.destaque {
+    background-color: var(--cor-destaque);
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.destaque h2 {
+    margin-top: 0;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Define as regras de estilo para o destaque escuro */
+.destaque-escuro {
+    background-color: var(--cor-destaque-escura);
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+/* Define as regras de estilo para as mensagens de erro */
+.mensagem-erro {
+    background-color: #f2dede;
+    color: #a94442;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ebccd1;
+    border-radius: 3px;
+    }
+    
+    /* Define as regras de estilo para as mensagens de sucesso */
+    .mensagem-sucesso {
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #d6e9c6;
+    border-radius: 3px;
+    }

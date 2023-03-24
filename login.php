@@ -12,15 +12,17 @@
     <title>Sistema de Reservas de Espaços</title>
 </head>
 <body> 
-<div class="container">
-      <form action="valida_login.php" method="post">
-        <h2>Login</h2>
+    <div class="login.container">
+    
+     <form action="valida_login.php" method="post">
+        <h2 class="titulo">Login</h2>
         <label for="username">Usuário:</label>
         <input type="text" name="email" id="username" required>
         <label for="password">Senha:</label>
         <input type="password" name="senha" id="password" required>
         <input type="submit" value="Entrar">
       </form>
+      
     </div>
 </body>
 </html>

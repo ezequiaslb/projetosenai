@@ -17,7 +17,7 @@ if(!isset($_SESSION['id_usuario'])) {
     <title>Página e Administração</title>
 </head>
 <body>
-<div class="container">
+<div class="containeradmin">
         <div class="header">
             <h1>Sistema de Reservas</h1>
             <nav>
