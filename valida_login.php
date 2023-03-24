@@ -26,7 +26,7 @@ if(isset($_POST['email']) && isset($_POST['senha'])) {
         $_SESSION['tipo_usuario'] = $row['tipo'];
 
         // Redireciona o usuário para a página correta de acordo com seu tipo de usuário
-        if($row['tipo'] == '1') {
+        if($row['tipo_usuario'] == '1') {
             header("Location: admin.php");
         } else {
             header("Location: usuario.php");
