@@ -29,7 +29,7 @@ if(isset($_POST['email']) && isset($_POST['senha'])) {
         if($row['tipo_usuario'] == '1') {
             header("Location: admin.php");
         } else {
-            header("Location: usuario.php");
+            header("Location: cadastro_usuario.php");
         }
     } else {
         header("Location: login.php");

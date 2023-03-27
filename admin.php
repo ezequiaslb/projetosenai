@@ -26,14 +26,26 @@ if(!isset($_SESSION['id_usuario'])) {
                     <li><a href="espacos.php">Espaços</a></li>
                     <li><a href="equipamentos.php">Equipamentos</a></li>
                     <li><a href="reservas.php">Reservas</a></li>
-                    <li><a href="usuarios.php">Usuários</a></li>
+                    <li><a href="cadastro_usuario.php">Usuários</a></li>
                     <li><a href="sair.php">Sair</a></li>
                 </ul>
             </nav>
+
         </div>
         <div class="content">
-            <h2>Bem-vindo ao Painel de Controle</h2>
-            <p>Este é o painel de controle do Sistema de Reservas. Aqui você pode gerenciar as reservas, os espaços e os usuários.</p>
+            <h2>Bem-vindo ao Painel de Controle
+            <?php
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
+        
+            if(isset($_SESSION['nome_usuario'])) {
+                $nome_usuario = $_SESSION['nome_usuario'];
+                echo "<p>$nome_usuario!</p>";
+            }
+            ?>
+            </h2>
+            <p> Aqui você pode gerenciar as reservas, os espaços e os usuários.</p>
             <h3>Reservas Pendentes</h3>
             <table>
                 <thead>
