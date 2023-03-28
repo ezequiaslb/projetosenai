@@ -31,7 +31,13 @@ if(mysqli_num_rows($resultado) > 0) {
 
 // Insere o novo registro na tabela de usuários
 $sql = "INSERT INTO usuarios (nome, email, telefone, senha, tipo_usuario) VALUES ('$nome', '$email', '$telefone', '$senha', $tipo_usuario)";
-    
+
+// Define a variável de sessão 'cadastro_sucesso' como true
+$_SESSION['cadastro_sucesso'] = true;
+
+// Redireciona o usuário para a página de cadastro
+header("Location: cadastro_usuario.php");
+
 if(mysqli_query($conexao, $sql)) {
     header("Location: cadastro_usuario.php?msg=cadastro_sucesso");
     exit();
