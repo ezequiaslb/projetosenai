@@ -22,7 +22,7 @@ if(!isset($_SESSION['id_usuario'])) {
             <h1>Sistema de Reservas</h1>
             <nav>
                 <ul>
-                    <li class="active"><a href="login.php">Início</a></li>
+                    <li class="active"><a href="index.php">Início</a></li>
                     <li><a href="espacos.php">Espaços</a></li>
                     <li><a href="equipamentos.php">Equipamentos</a></li>
                     <li><a href="reservas.php">Reservas</a></li>
