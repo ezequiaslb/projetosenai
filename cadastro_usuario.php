@@ -1,3 +1,9 @@
+<?php 
+if (!isset($_SESSION['cadastro_sucesso']) || $_SESSION['cadastro_sucesso'] !== true) {
+    header("Location: admin.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
