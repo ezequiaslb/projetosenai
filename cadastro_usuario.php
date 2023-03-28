@@ -46,12 +46,6 @@
 
 	<input type="submit" value="Cadastrar">
     </form>
-    <?php if (isset($_SESSION['cadastro_sucesso'])): ?>
-    <div class="alert alert-success" role="alert">
-        Usuário cadastrado com sucesso!
-    </div>
-    <?php unset($_SESSION['cadastro_sucesso']); ?>
-<?php endif; ?>
 </div>
 
 </body>
