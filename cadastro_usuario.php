@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,21 +13,45 @@
 </head>
 <body >
 <div class="header">
-            <h1>Sistema de Reservas</h1>
-            <nav>
-                <ul>
-                    <li class="active"><a href="index.php">Início</a></li>
-                    <li><a href="espacos.php">Espaços</a></li>
-                    <li><a href="equipamentos.php">Equipamentos</a></li>
-                    <li><a href="reservas.php">Reservas</a></li>
-                    <li><a href="cadastro_usuario.php">Usuários</a></li>
-                    <li><a href="sair.php">Sair</a></li>
-                </ul>
-            </nav>
-        </div>
+    <h1>Sistema de Reservas</h1>
+        <nav>
+            
+            <ul>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="espacos.php">Espaços</a></li>
+                <li><a href="equipamentos.php">Equipamentos</a></li>
+                <li><a href="reservas.php">Reservas</a></li>
+                <li><a href="cadastro_usuario.php">Usuários</a></li>
+                <li><a href="sair.php">Sair</a></li>
+            </ul>
+        </nav>
+</div>
 
     <div class="container">
         <h1>Cadastro de Usuários</h1>
+      <!--  
+       < ?php
+        if (isset($_SESSION['mensagem'])) {
+            echo "<p>" . $_SESSION['mensagem'] . "</p>";
+            unset($_SESSION['mensagem']);
+            echo "<script>alert('$mensagem')</script>";
+        }
+        ?> -->
+        <?php 
+        // Definir a variável $mensagem com um valor padrão
+            $mensagem = '';
+         // Verificar se existe uma mensagem na variável de sessão
+            if (isset($_SESSION['mensagem'])) {
+                // Armazenar a mensagem em uma variável para ser usada no alerta Javascript
+                $mensagem = $_SESSION['mensagem'];
+                // Limpar a variável de sessão para não exibir a mesma mensagem várias vezes
+                unset($_SESSION['mensagem']);
+                // Exibir um alerta Javascript com a mensagem
+                echo "<script>alert('" . $mensagem . "')</script>";
+            }
+
+        ?>
+        
 
         <form method="POST" action="processa_cadastro_usuario.php">
 	<label for="nome">Nome:</label>
