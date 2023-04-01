@@ -32,11 +32,11 @@ if(isset($_POST['email']) && isset($_POST['senha'])) {
             header("Location: cadastro_usuario.php");
         }
     } else {
-        header("Location: login.php");
+        header("Location: index.php");
         $_SESSION['mensagem_erro'] = "Usuário ou senha incorretos, tente novamente. ";
     }
 } else {
-    header("Location: login.php");
+    header("Location: index.php");
     $_SESSION['mensagem_erro'] = "Usuário ou senha incorretos, tente novamente. ";
 }
 ?>
