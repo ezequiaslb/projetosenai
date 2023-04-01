@@ -26,7 +26,7 @@ if(!isset($_SESSION['id_usuario'])) {
                     <li><a href="espacos.php">Espaços</a></li>
                     <li><a href="equipamentos.php">Equipamentos</a></li>
                     <li><a href="reservas.php">Reservas</a></li>
-                    <li><a href="cadastro_usuario.php">Usuários</a></li>
+                    <li><a href="usuario.php">Usuários</a></li>
                     <?php if ($_SESSION['tipo_usuario'] == 1): ?>
                     <li><a href="admin.php">administrador</a></li>
                     <?php endif; ?>
