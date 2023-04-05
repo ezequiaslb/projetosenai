@@ -1,0 +1,74 @@
+/* Estilo para o corpo da página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para o conteúdo principal da página */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 130px);
+}
+
+section {
+    background-color: #f2f2f2;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+section p {
+    margin-bottom: 1rem;
+}
+
+section div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+section div label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+section div input[type="email"],
+section div input[type="password"] {
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 1.2rem;
+}
+
+section button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+section button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.erro {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  
