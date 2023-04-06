@@ -32,7 +32,7 @@ if (mysqli_num_rows($resultado) > 0) {
     if ($usuario['tipo_usuario'] == 1) {
         // O usuário é um administrador, redirecionar para a página de administração
         $_SESSION['admin'] = true;
-        header('Location: paineladm.php');
+        header('Location: painel_adm.php');
     } else {
         // O usuário é um usuário comum, redirecionar para a página de usuário
         $_SESSION['admin'] = false;
