@@ -18,7 +18,6 @@ session_start();
     <main>
         <section>
             <h2>Seja bem-vindo!</h2>
-            <p>Insira seu Usuário e Senha:</p>
             <?php
                 if (isset($_SESSION['mensagem'])) {
                     echo "<p class= erro>" . $_SESSION['mensagem'] . "</p>";

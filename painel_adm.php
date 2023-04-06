@@ -16,8 +16,9 @@ $resultado = mysqli_query($conexao, $sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Painel Administrativo</title>
-    <link rel="stylesheet" href="painel_adm.css">
+    
 </head>
 <body>
     <header>
@@ -27,6 +28,7 @@ $resultado = mysqli_query($conexao, $sql);
                 <li><a href="gerenciar_usuarios.php">Usuários</a></li>
                 <li><a href="gerenciar_espacos.php">Espaços</a></li>
                 <li><a href="gerenciar_equipamentos.php">Equipamentos</a></li>
+                <li><a href="logout.php">Sair</a></li>
             </ul>
         
     </header>

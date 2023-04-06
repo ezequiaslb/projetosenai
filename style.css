@@ -1,0 +1,186 @@
+/* Estilos para o header */
+body{
+  margin: auto;
+  padding-top: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e9ecef;
+  
+}
+/* Estilos para o header */
+header {
+  background-color: #2675A6;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+  
+  header h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  header ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header li {
+    margin-left: 20px;
+  }
+  
+  header a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  header a:hover {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Estilos para o main */
+  main {
+    max-width: 1200px;
+    margin: 20px auto;  
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  /* Estilos para a tabela de reservas */
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  thead th {
+    background-color: #4fa2f5;
+    color: #fff;
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+  
+  tbody tr:hover {
+    background-color: #e9ecef;
+  }
+  
+  /* Estilos para o botão de ações */
+  .botao-acoes {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+  
+  .botao-acoes button {
+    margin-left: 10px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .botao-acoes button:hover {
+    background-color: #333;
+  }
+  
+  /* Estilos para mensagens de erro */
+  .erro {
+    color: red;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  .form-container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  /*Estilos para os formulários*/
+  .form-container h3 {
+    margin-bottom: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="password"] {
+    width: 98%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #333;
+  }
+  select {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f2f2f2;
+    color: #333;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  select:hover {
+    background-color: #e6e6e6;
+  }
+  
+  select:focus {
+    outline: none;
+    box-shadow: 0 0 5px #333;
+  }
+  .erro {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  .sucesso {
+    background-color: #b8f5c0;
+    border: 1px solid #e2f394;
+    color: #41e071;
+    margin: 10px 0;
+    padding: 10px;
+  }

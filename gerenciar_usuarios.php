@@ -16,14 +16,13 @@ $sql = "SELECT * FROM usuarios";
 $resultado = mysqli_query($conexao, $sql);
 
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciar Usuários</title>
-    <link rel="stylesheet" href="painel_adm.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -32,9 +31,9 @@ $resultado = mysqli_query($conexao, $sql);
         </div>
         <nav>
             <ul>
-                <li><a href="gerenciar_usuarios.php">Gerenciar Usuários</a></li>
-                <li><a href="gerenciar_espacos.php">Gerenciar Espaços</a></li>
-                <li><a href="gerenciar_equipamentos.php">Gerenciar Equipamentos</a></li>
+                <li><a href="gerenciar_usuarios.php">Usuários</a></li>
+                <li><a href="gerenciar_espacos.php">Espaços</a></li>
+                <li><a href="gerenciar_equipamentos.php">Equipamentos</a></li>
                 <li><a href="logout.php">Sair</a></li>
             </ul>
         </nav>
@@ -62,7 +61,24 @@ $resultado = mysqli_query($conexao, $sql);
                 <?php } ?>
             </tbody>
         </table>
-        <h3>Cadastrar novo usuário</h3>
+        
+    </main>
+    
+    <main>
+    <h3>Cadastrar novo usuário</h3>
+    <?php 
+    // Verifica se existe mensagem na URL
+    if (isset($_GET['mensagem'])) {
+        $mensagem = $_GET['mensagem'];
+        
+        // Exibe a mensagem de acordo com o parâmetro passado na URL
+        if ($mensagem == 'sucesso') {
+            echo '<p class= sucesso>Cadastro realizado com sucesso!</p>';
+        } else if ($mensagem == 'erro') {
+            echo '<p class= erro>Erro ao cadastrar usuário.</p>';
+        }
+    }
+    ?>
         <form action="cadastrar_usuario.php" method="post">
             <div class="form-group">
                 <label for="nome">Nome:</label>
@@ -76,8 +92,15 @@ $resultado = mysqli_query($conexao, $sql);
                 <label for="senha">Senha:</label>
                 <input type="password" name="senha" id="senha" required>
             </div>
+            <div>
+                <label for="tipo_usuario">Tipo de Usuário:</label>
+                <select id="tipo_usuario" name="tipo_usuario">
+                <option value="1">Administrador</option>
+                <option value="2" selected>Usuário Padrão</option>
+                </select>
+            </div>
             <button type="submit">Cadastrar</button>
-        </form>
+        </form> 
     </main>
 </body>
 </html>
