@@ -45,7 +45,7 @@ $resultado = mysqli_query($conexao, $sql);
                 <tr>
                     <th>Nome</th>
                     <th>Email</th>
-                    <th>Ações</th>
+                    <th>Ação</th>
                 </tr>
             </thead>
             <tbody>
@@ -54,7 +54,6 @@ $resultado = mysqli_query($conexao, $sql);
                         <td><?= $usuario['nome'] ?></td>
                         <td><?= $usuario['email'] ?></td>
                         <td>
-                            <a href="editar_usuario.php?id=<?= $usuario['id'] ?>" class="botao-editar">Editar</a>
                             <a href="excluir_usuario.php?id=<?= $usuario['id'] ?>" class="botao-excluir" onclick="return confirm('Tem certeza que deseja excluir o usuário <?= $usuario['nome'] ?>?')">Excluir</a>
                         </td>
                     </tr>
