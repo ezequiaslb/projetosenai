@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-// Verificar se há um parâmetro "erro" na URL
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
