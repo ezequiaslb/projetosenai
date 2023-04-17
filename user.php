@@ -7,7 +7,6 @@ if(!isset($_SESSION['admin']) || $_SESSION['admin']) {
     header('Location: index.php');
     exit();
 }
-
 // Incluir o arquivo de conexão com o banco de dados
 include 'conecta.php';
 
@@ -15,20 +14,14 @@ if (isset($usuario['id'])) {
     $id_usuario = $usuario['id'];
  } else {
     // faça algo caso o índice não esteja definido, como redirecionar o usuário para uma página de erro
-    echo "Deu erro filha da puta";
+    
  }
 // Definir a variável id_usuario com o id do usuário logado
-$id_usuario = $_SESSION['id'];
-
-// Selecionar as reservas do usuário a partir do id do usuário logado
-$sql = "SELECT r.id, r.data, r.hora_inicio, r.hora_fim, r.descricao, e.nome AS espaco, eq.nome AS equipamento FROM reservas r LEFT JOIN espacos e ON r.espaco_id = e.id LEFT JOIN equipamentos eq ON r.equipamento_id = eq.id WHERE r.usuario_id = $id_usuario ORDER BY r.data, r.hora_inicio";
-
-$resultado = mysqli_query($conexao, $sql);
+$id_usuario = $_SESSION['id_usuario'];
 
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,43 +32,86 @@ $resultado = mysqli_query($conexao, $sql);
 <body>
 
     <header>
-        <nav>
+        <h1>Sistema de Reservas</h1>
+        
             <ul>
                 <li><a href="fazer_reserva.php">Fazer Reserva</a></li>
                 <li><a href="logout.php">Sair</a></li>
             </ul>
-        </nav>
+        
     </header>
-
     <main>
         <section>
-            <h2>Minhas Reservas</h2>
-            <table>
+            
+            <!-- Tabela de reservas de espaços -->
+                <table>
+                <h2>Minhas Reservas de Espaços</h2>
                 <thead>
                     <tr>
-                        <th>Data</th>
-                        <th>Início</th>
-                        <th>Fim</th>
-                        <th>Descrição</th>
-                        <th>Espaço</th>
-                        <th>Equipamento</th>
-                        <th>Ações</th>
+                    <th>Espaço</th>
+                    <th>Data</th>
+                    <th>Horário de início</th>
+                    <th>Horário de término</th>
+                    <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while($reserva = mysqli_fetch_assoc($resultado)) { ?>
-                    <tr>
-                        <td><?= $reserva['data'] ?></td>
-                        <td><?= $reserva['hora_inicio'] ?></td>
-                        <td><?= $reserva['hora_fim'] ?></td>
-                        <td><?= $reserva['descricao'] ?></td>
-                        <td><?= $reserva['espaco'] ?></td>
-                        <td><?= $reserva['equipamento'] ?></td>
-                        <td><a href="excluir_reserva.php?id=<?= $reserva['id'] ?>">Excluir</a></td>
-                    </tr>
-                    <?php } ?>
+                    <?php
+                    // Consulta SQL para obter as reservas de espaços do usuário
+                    $sql_espacos = "SELECT r.id, e.descricao, r.data, r.data_inicio, r.data_fim 
+                                    FROM reservas r
+                                    INNER JOIN espacos e ON r.id_espaco = e.id
+                                    WHERE r.id_usuario = $id_usuario";
+
+                    $resultado_espacos = mysqli_query($conexao, $sql_espacos);
+
+                    // Preencher a tabela HTML com as reservas de espaços
+                    while ($linha_espacos = mysqli_fetch_assoc($resultado_espacos)) {
+                        echo "<tr>";
+                        echo "<td>" . $linha_espacos['descricao'] . "</td>";
+                        echo "<td>" . $linha_espacos['data'] . "</td>";
+                        echo "<td>" . $linha_espacos['data_inicio'] . "</td>";
+                        echo "<td>" . $linha_espacos['data_fim'] . "</td>";
+                        echo "<td><a href='#'>Cancelar</a></td>";
+                        echo "</tr>";
+                    }
+                    ?>
                 </tbody>
-            </table>
+                </table>
+
+    <!-- Tabela de reservas de equipamentos -->
+                <h2>Minhas Reservas de Equipamentos</h2>
+                    <table>
+                    <thead>
+                        <tr>
+                        <th>Equipamento</th>
+                        <th>Data</th>
+                        <th>Quantidade</th>
+                        <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        // Consulta SQL para obter as reservas de equipamentos do usuário
+                        $sql_equipamentos = "SELECT re.id, eq.descricao, re.data, re.quantidade 
+                                            FROM reservas_equipamentos re
+                                            INNER JOIN equipamentos eq ON re.id_equipamento = eq.id
+                                            WHERE re.id_usuario = $id_usuario";
+
+                        $resultado_equipamentos = mysqli_query($conexao, $sql_equipamentos);
+
+                        // Preencher a tabela HTML com as reservas de equipamentos
+                        while ($linha_equipamentos = mysqli_fetch_assoc($resultado_equipamentos)) {
+                            echo "<tr>";
+                            echo "<td>" . $linha_equipamentos['descricao'] . "</td>";
+                            echo "<td>" . $linha_equipamentos['data'] . "</td>";
+                            echo "<td>" . $linha_equipamentos['quantidade'] . "</td>";
+                            echo "<td><a href='#'>Cancelar</a></td>";
+                            echo "</tr>";
+                        }
+                        ?>
+                </tbody>
+                </table>
         </section>
     </main>
 

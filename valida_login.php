@@ -20,9 +20,10 @@ if (mysqli_num_rows($resultado) > 0) {
             $_SESSION['admin'] = true;
             header('Location: painel_adm.php');
         } else {
-            $_SESSION['admin'] = false;
-            $_SESSION['id_usuario'] = $usuario['id']; // Definir o id do usuário logado na variável de sessão
-            var_dump($_SESSION['id_usuario']); // Imprime o valor da variável de sessão na tela
+            // Armazenar o ID do usuário em uma variável
+            $id_usuario = $usuario['id'];
+            // Definir a variável de sessão "id_usuario" com o valor do ID do usuário
+            $_SESSION['id_usuario'] = $id_usuario;
             header('Location: user.php');
         }
     } else {
