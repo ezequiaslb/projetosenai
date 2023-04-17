@@ -1,65 +1,74 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['admin']) || $_SESSION['admin']) {
+    // Redireciona para a página de login se não estiver logado como usuário padrão
+    header('Location: index.php');
+    exit();
+}
+
+// Inclui o arquivo de conexão com o banco de dados
+include 'conecta.php';
+
+// Seleciona todas as reservas do usuário atual
+$id_usuario = $_SESSION['id_usuario'];
+$sql = "SELECT r.id, r.data, r.hora, r.observacoes, s.descricao AS sala_descricao FROM reservas r INNER JOIN salas s ON r.id_sala = s.id WHERE r.id_usuario = $id_usuario";
+$resultado = mysqli_query($conexao, $sql);  
+
+// Verifica se a consulta retornou algum resultado
+if (mysqli_num_rows($resultado) > 0) {
+    $reservas = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
+} else {
+    $reservas = array();
+}
+
+// Fecha a conexão com o banco de dados
+mysqli_close($conexao);
+?>
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Reservas - Usuário</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Usuário</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Sistema de Reservas</h1>
-        <nav>
-            <ul>
-                <li><a href="user.php">Minhas Reservas</a></li>
-                <li><a href="fazer_reserva.php">Fazer Reserva</a></li>
-                <li><a href="logout.php">Sair</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include 'header.php'; ?>
+
     <main>
-        <h2>Minhas Reservas</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Data de início</th>
-                    <th>Data de término</th>
-                    <th>Espaço</th>
-                    <th>Equipamento</th>
-                    <th>Status</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                require 'conecta.php';
-                session_start();
-                $id_usuario = $_SESSION['id_usuario'];
-                $sql = "SELECT r.id, r.data_inicio, r.data_termino, e.nome AS espaco, q.nome AS equipamento, r.status FROM reservas r JOIN espacos e ON r.id_espaco = e.id
-                LEFT JOIN equipamentos q ON r.id_equipamento = q.id
-                        WHERE r.id_usuario = $id_usuario";
-                $resultado = mysqli_query($conexao, $sql);
-                while ($reserva = mysqli_fetch_assoc($resultado)) {
-                    $status = $reserva['status'] == 1 ? 'Ativa' : 'Cancelada';
-                ?>
+        <h1>Minhas reservas</h1>
+
+        <?php if (!empty($reservas)): ?>
+            <table>
+                <thead>
                     <tr>
-                        <td><?= date('d/m/Y H:i', strtotime($reserva['data_inicio'])) ?></td>
-                        <td><?= date('d/m/Y H:i', strtotime($reserva['data_termino'])) ?></td>
-                        <td><?= $reserva['espaco'] ?></td>
-                        <td><?= $reserva['equipamento'] ?? '-' ?></td>
-                        <td><?= $status ?></td>
-                        <td>
-                            <?php if ($reserva['status'] == 1 && strtotime($reserva['data_inicio']) > time()) { ?>
-                                <form action="excluir_reserva.php" method="post">
-                                    <input type="hidden" name="id_reserva" value="<?= $reserva['id'] ?>">
-                                    <button type="submit">Excluir</button>
-                                </form>
-                            <?php } ?>
-                        </td>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Sala</th>
+                        <th>Observações</th>
+                        <th>Ações</th>
                     </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php foreach ($reservas as $reserva): ?>
+                        <tr>
+                            <td><?= $reserva['data'] ?></td>
+                            <td><?= $reserva['hora'] ?></td>
+                            <td><?= $reserva['sala_descricao'] ?></td>
+                            <td><?= $reserva['observacoes'] ?></td>
+                            <td><a href="excluir_reserva.php?id=<?= $reserva['id'] ?>">Excluir</a></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php else: ?>
+            <p>Você ainda não possui reservas.</p>
+        <?php endif; ?>
+
+        <a href="fazer_reserva.php">Fazer reserva</a>
     </main>
+
+    <?php include 'footer.php'; ?>
 </body>
 </html>
