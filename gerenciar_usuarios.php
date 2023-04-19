@@ -90,7 +90,7 @@ $resultado = mysqli_query($conexao, $sql);
             </div>
             <div class="form-group">
                 <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="senha" required>
+                <input type="password" name="senha" id="senha" required >
             </div>
             <div>
                 <label for="tipo_usuario">Tipo de Usuário:</label>

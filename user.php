@@ -58,10 +58,8 @@ $id_usuario = $_SESSION['id_usuario'];
                 <tbody>
                     <?php
                     // Consulta SQL para obter as reservas de espaços do usuário
-                    $sql_espacos = "SELECT r.id, e.descricao, r.data, r.data_inicio, r.data_fim 
-                                    FROM reservas r
-                                    INNER JOIN espacos e ON r.id_espaco = e.id
-                                    WHERE r.id_usuario = $id_usuario";
+                    $sql_espacos = "SELECT r.id, e.descricao, r.data, r.data_inicio, r.data_fim FROM reservas r INNER JOIN espacos e ON r.id_espaco = e.id
+                    WHERE r.id_usuario = $id_usuario";
 
                     $resultado_espacos = mysqli_query($conexao, $sql_espacos);
 
@@ -93,10 +91,7 @@ $id_usuario = $_SESSION['id_usuario'];
                     <tbody>
                         <?php
                         // Consulta SQL para obter as reservas de equipamentos do usuário
-                        $sql_equipamentos = "SELECT re.id, eq.descricao, re.data, re.quantidade 
-                                            FROM reservas_equipamentos re
-                                            INNER JOIN equipamentos eq ON re.id_equipamento = eq.id
-                                            WHERE re.id_usuario = $id_usuario";
+                        $sql_equipamentos = "SELECT re.id, eq.descricao, re.data, re.quantidade FROM reservas_equipamentos re INNER JOIN equipamentos eq ON re.id_equipamento = eq.id WHERE re.id_usuario = $id_usuario";
 
                         $resultado_equipamentos = mysqli_query($conexao, $sql_equipamentos);
 
