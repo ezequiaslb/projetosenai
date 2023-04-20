@@ -39,6 +39,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
+    // Obtém os tipos de usuário do banco de dados
+    $sql = "SELECT * FROM tipos_usuario";
+    $resultado = mysqli_query($conexao, $sql);
+
+    $tipos_usuario = array();
+
+    while ($tipo = mysqli_fetch_assoc($resultado)) {
+        $tipos_usuario[$tipo['id']] = $tipo['descricao'];
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -80,10 +90,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="tel" name="telefone" id="telefone" value="<?= $usuario['telefone'] ?>">
             </div>
             <div class="form-group">
+                <?php
+                //$sql = "SELECT * FROM tipos_usuario";
+                //$resultado = mysqli_query($conexao, $sql);
+
+                // while ($tipo = mysqli_fetch_assoc($resultado)) {
+                //     echo '<option value="' . $tipo['id'] . '"';
+                //     if (isset($usuario['tipo_usuario']) && $usuario['tipo_usuario'] == $tipo['id']) {
+                //         echo '';
+                //     }
+                //     echo '>' . $tipo['descricao'] . '</option>';
+                //}
+             ?>  
+             
                 <label for="tipos_usuario">Tipo de Usuário:</label>
                 <select id="tipos_usuario" name="tipos_usuario">
-                <option value="1" <?php if ($usuario['tipos_usuario'] == 1) echo 'selected' ?>><?= $tipos_usuario[1] ?></option>
-                <option value="2" <?php if ($usuario['tipos_usuario'] == 1) echo 'selected' ?>><?= $tipos_usuario[1] ?></option>
+                <option value="1" <?php if ($usuario['tipo_usuario'] == 1) echo 'selected' ?>>Administrador</option>
+                <option value="2" <?php if ($usuario['tipo_usuario'] == 2) echo 'selected' ?>>Usuário Comum</option>
                 </select>
             </div>
                 <button type="submit">Salvar</button>

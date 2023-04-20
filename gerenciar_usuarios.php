@@ -27,7 +27,7 @@ $resultado = mysqli_query($conexao, $sql);
 <body>
     <header>
         <div class="logo">
-            <a href="painel_adm.php">Sistema de Reservas</a>
+            <H1>Sistema de Reservas</H1>
         </div>
         <nav>
             <ul>
@@ -54,8 +54,8 @@ $resultado = mysqli_query($conexao, $sql);
                         <td><?= $usuario['nome'] ?></td>
                         <td><?= $usuario['email'] ?></td>
                         <td>
-                            <a href="editar_usuario.php?id=<?= $usuario['id'] ?>" class="botao-editar">Editar</a>
-                            <a href="excluir_usuario.php?id=<?= $usuario['id'] ?>" class="botao-excluir" onclick="return confirm('Tem certeza que deseja excluir o usuário <?= $usuario['nome'] ?>?')">Excluir</a>
+                            <a href="editar_usuario.php?id=<?= $usuario['id'] ?>" class="btn-acao" >Editar</a>
+                            <a href="excluir_usuario.php?id=<?= $usuario['id'] ?>" class="btn-acao" onclick="return confirm('Tem certeza que deseja excluir o usuário <?= $usuario['nome'] ?>?')">Excluir</a>
                         </td>
                     </tr>
                 <?php } ?>
