@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $telefone = $_POST['telefone'];
-    $tipo_usuario = $_POST['tipo_usuario'];
+    $tipo_usuario = $_POST['tipos_usuario'];
 
     $sql = "UPDATE usuarios SET nome = '$nome', email = '$email', telefone = '$telefone', tipo_usuario = $tipo_usuario WHERE id = $id";
     $resultado = mysqli_query($conexao, $sql);
@@ -65,9 +65,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <nav>
             <ul>
                 <li><a href="painel_adm.php">Painel Administrativo</a></li>
-                <li><a href="gerenciar_usuarios.php">Gerenciar Usuários</a></li>
-                <li><a href="gerenciar_espacos.php">Gerenciar Espaços</a></li>
-                <li><a href="gerenciar_equipamentos.php">Gerenciar Equipamentos</a></li>
+                <li><a href="gerenciar_usuarios.php">Usuários</a></li>
+                <li><a href="gerenciar_espacos.php">Espaços</a></li>
+                <li><a href="gerenciar_equipamentos.php">Equipamentos</a></li>
             </ul>
         </nav>
     </header>
