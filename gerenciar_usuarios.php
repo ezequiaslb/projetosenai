@@ -54,8 +54,8 @@ $resultado = mysqli_query($conexao, $sql);
                         <td><?= $usuario['nome'] ?></td>
                         <td><?= $usuario['email'] ?></td>
                         <td>
-                            <a href="editar_usuario.php?id=<?= $usuario['id'] ?>" class="btn-acao" >Editar</a>
-                            <a href="excluir_usuario.php?id=<?= $usuario['id'] ?>" class="btn-acao" onclick="return confirm('Tem certeza que deseja excluir o usuário <?= $usuario['nome'] ?>?')">Excluir</a>
+                            <a href="editar_usuario.php?id=<?= $usuario['id'] ?>" class="editar-btn" >Editar</a>
+                            <a href="excluir_usuario.php?id=<?= $usuario['id'] ?>" class="excluir-btn" onclick="return confirm('Tem certeza que deseja excluir o usuário <?= $usuario['nome'] ?>?')">Excluir</a>
                         </td>
                     </tr>
                 <?php } ?>
@@ -89,7 +89,11 @@ $resultado = mysqli_query($conexao, $sql);
                 <input type="email" name="email" id="email" required>
             </div>
             <div class="form-group">
-                <label for="senha">Senha:</label>
+                <label for="itel">Senha:</label>
+                <input type="tel" name="telefone" id="itel" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Telefone:</label>
                 <input type="password" name="senha" id="senha" required>
             </div>
             <div>

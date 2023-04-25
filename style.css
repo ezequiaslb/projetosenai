@@ -1,8 +1,6 @@
-/*@charset "UTF-8"
+@charset "UTF-8";
 
 /* Estilos para o header */
-/*
-
 body{
   margin: auto;
   padding-top: 15px;
@@ -11,7 +9,6 @@ body{
   
 }
 /* Estilos para o header */
-/*
 header {
   background-color: #2675A6;
   color: #fff;
@@ -20,24 +17,24 @@ header {
   align-items: center;
   padding: 20px;
 }
- /* 
+  
   header h1 {
     font-size: 24px;
     margin: 0;
   }
-/*  
+  
   header ul {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
   }
-/*  
+  
   header li {
     margin-left: 20px;
   }
   
-/*  header a {
+  header a {
     color: #fff;
     text-decoration: none;
     padding: 10px;
@@ -45,13 +42,13 @@ header {
     transition: all 0.2s ease-in-out;
   }
   
-/*  header a:hover {
+  header a:hover {
     background-color: #fff;
     color: #333;
   }
   
   /* Estilos para o main */
- /* main {
+  main {
     max-width: 1200px;
     margin: 20px auto;  
     padding: 20px;
@@ -59,8 +56,7 @@ header {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-
-  /* Estilos para as tabelas
+  /* Estilos para a tabela de reservas */
   table {
     width: 100%;
     margin-top: 20px;
@@ -69,9 +65,8 @@ header {
   }
   
   th, td {
-    text-align: right;
+    text-align: left;
     padding: 8px;
-    color: #41e071;
   }
   
   thead th {
@@ -87,9 +82,50 @@ header {
   tbody tr:hover {
     background-color: #e9ecef;
   }
- */
   
-  /* Estilos para mensagens de erro
+  .editar-btn, .excluir-btn {
+    background-color: #4CAF50; /* cor de fundo */
+    border: none; /* sem borda */
+    color: white; /* cor do texto */
+    padding: 5px 14px; /* tamanho do padding */
+    text-align: center; /* alinhamento do texto */
+    text-decoration: none; /* sem sublinhado */
+    display: inline-block; /* exibir como bloco */
+    font-size: 16px; /* tamanho da fonte */
+    margin-right: 10px; /* margem à direita */
+    border-radius: 5px; /* arredondamento das bordas */
+  }
+  
+  .excluir-btn {
+    background-color: #fa5347; /* cor de fundo */
+  }
+  
+  .editar-btn:hover, .excluir-btn:hover {
+    background-color: #3e8e41; /* cor de fundo ao passar o mouse */
+  }
+
+  /* Estilos para o botão de ações */
+  .botao-acoes {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+  
+  .botao-acoes button {
+    margin-left: 10px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .botao-acoes button:hover {
+    background-color: #333;
+  }
+  
+  /* Estilos para mensagens de erro */
   .erro {
     color: red;
     font-size: 16px;
@@ -101,7 +137,7 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
   }
-  Estilos para os formulários
+  /*Estilos para os formulários*/
   .form-container h3 {
     margin-bottom: 10px;
   }
@@ -119,7 +155,7 @@ header {
   .form-group input[type="email"],
   .form-group input[type="tel"],
   .form-group input[type="password"] {
-    width: 50%;
+    width: 98%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -138,7 +174,6 @@ header {
   button[type="submit"]:hover {
     background-color: #333;
   }
-  
   select {
     font-size: 16px;
     padding: 10px;
