@@ -1,6 +1,7 @@
 <?php
 include 'conecta.php';
 session_start();
+
 include 'classes/Gerenciador.php';
 
 // Verificar se o usuário está logado
