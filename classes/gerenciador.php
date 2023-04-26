@@ -4,7 +4,7 @@ class Gerenciador {
     
     public function __construct($conexao) {
         $this->conexao = $conexao;
-    }
+    } 
     
     public function listar($tabela) {
         $sql = "SELECT * FROM $tabela";
