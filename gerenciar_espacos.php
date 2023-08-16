@@ -2,19 +2,11 @@
 include 'conecta.php';
 session_start();
 
-include 'classes/Gerenciador.php';
-
 // Verificar se o usuário está logado
 if (!isset($_SESSION['admin']) || $_SESSION['admin'] != true) {
     header('Location: index.php');
     exit;
 }
-
-// Criar objeto gerenciador de espaços
-$gerenciadorEspacos = new Gerenciador($conexao);
-
-// Listar espaços
-$espacos = $gerenciadorEspacos->listar('espacos');
 
 ?>
 
