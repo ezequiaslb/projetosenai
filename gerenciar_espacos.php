@@ -32,10 +32,7 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] != true) {
     </header>
     <main>
         <h2>Gerenciar Espaços</h2>
-        <?php if (isset($_SESSION['mensagem'])) { ?>
-            <div class="mensagem"><?= $_SESSION['mensagem'] ?></div>
-            <?php unset($_SESSION['mensagem']); ?>
-        <?php } ?>
+        
         <table>
             <thead>
                 <tr>
@@ -47,18 +44,7 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] != true) {
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($espacos as $espaco) { ?>
-                    <tr>
-                        <td><?= $espaco['id'] ?></td>
-                        <td><?= $espaco['descricao'] ?></td>
-                        <td><?= $espaco['capacidade'] ?></td>
-                        <td><?= $espaco['localizacao'] ?></td>
-                        <td>
-                            <a href="editar_espaco.php?id=<?= $espaco['id'] ?>" class="editar-btn">Editar</a>
-                            <a href="excluir_espaco.php?id=<?= $espaco['id'] ?>" onclick="return confirm('Deseja realmente excluir este espaço?')" class="excluir-btn">Excluir</a>
-                        </td>
-                    </tr>
-                <?php } ?>
+                
             </tbody>
         </table>
         <a class="editar-btn" href="cadastrar_espaco.php">Cadastrar novo espaço</a>
